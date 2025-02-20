@@ -70,7 +70,7 @@ app.get('/read/usernames', (req: UserRequest, res: Response) => {
   res.send(usernames);
 });
 
-app.use('/read/username', addMsgToRequest);
+app.use('/read/username', addMsgToRequest); // middleware: populates req.users
 app.get('/read/username/:name', (req: UserRequest, res: Response) => {
   let name = req.params.name;
   let users_with_name = req.users?.filter(function(user) {
